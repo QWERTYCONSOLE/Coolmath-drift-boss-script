@@ -10,13 +10,13 @@
 
 (function() {
     'use strict';
-    
-    const BASE_URL = 'https://raw.githubusercontent.com/QWERTYCONSOLE/Coolmath-drift-boss-script/main/';
-    
+
+const BASE_URL = 'https://raw.githubusercontent.com/QWERTYCONSOLE/Coolmath-drift-boss-script/refs/heads/main/';
+
     const MODS = {
-        'infinite-coins.js': true, 
-        'no-drift.js': true,       
-        'heavy-brick.js': true     
+        'infinite-coins.js': true,
+        'no-drift.js': true,
+        'heavy-brick.js': true
     };
 
     console.log("🚀 Initializing GitHub Mod Loader...");
@@ -25,7 +25,7 @@
         if (isEnabled) {
             GM_xmlhttpRequest({
                 method: "GET",
-                url: BASE_URL + file + '?t=' + Date.now(), 
+                url: BASE_URL + file + '?t=' + Date.now(),
                 onload: function(response) {
                     if (response.status === 200) {
                         const script = document.createElement('script');
